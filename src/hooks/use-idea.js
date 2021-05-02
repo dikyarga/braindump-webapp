@@ -19,7 +19,7 @@ export default function useUser() {
     const isLoading = !ideas && !error;
 
     const create = async () => {
-        const freshIdea = { title: "", body: "body", created_date: new Date() };
+        const freshIdea = { title: "", body: "", created_date: new Date() };
         mutate([...ideas, freshIdea], false);
 
         await fetch(API_URL, {

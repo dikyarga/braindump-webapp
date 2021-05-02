@@ -44,7 +44,7 @@ export const Main: React.FC = () => {
                 </div>
                 {ideas && (
                     <div className="flex-1 container my-8 max-w-screen-lg mx-auto p-5 ">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 ">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-cols-fr">
                             {ideas.map((idea) => {
                                 return (
                                     <Card
