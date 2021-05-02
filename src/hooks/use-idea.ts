@@ -1,6 +1,7 @@
 import { useState } from "react";
 import useSWR from "swr";
 import urlJoin from "url-join";
+import { Ideas } from "../types";
 
 const API_URL = "http://localhost:4000/ideas";
 const headers = {
@@ -11,7 +12,16 @@ const SORT_OPTIONS = {
     TITLE: { name: "title", displayName: "Sort by Title" },
 };
 
-export default function useUser() {
+export default function useUser(): {
+    ideas: Ideas;
+    isLoading: boolean;
+    create: () => void;
+    edit: (idea) => void;
+    remove: (number) => void;
+    currentSort: string;
+    setSort: (string) => void;
+    SORT_OPTIONS: { [_: string]: { name: string, displayName: string } };
+} {
     const [currentSort, setSort] = useState(SORT_OPTIONS.DATE.name);
     const { data: ideas, mutate, error } = useSWR(
         urlJoin(API_URL, `?_sort=${currentSort}&_order=asc`),
