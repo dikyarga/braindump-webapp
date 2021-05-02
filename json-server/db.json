@@ -1,58 +1,16 @@
 {
   "ideas": [
     {
-      "title": "egagsdf <br>afgagafga",
-      "body": "e <br>b asfsaf <br>adfadffg s<br>gsjafkjaskfjkasfjkj <br>fdfjkafjkdfjaksdfj <br>fkjg;asjdjgaksjfafaf",
-      "created_date": "2021-05-02T06:36:10.299Z",
+      "title": "CRUD Generator",
+      "body": "for interview",
+      "created_date": "2021-05-02T18:08:38.506Z",
+      "id": 1
+    },
+    {
+      "title": "Magic <br>e2e <br>scenario",
+      "body": "&nbsp;from&nbsp; manual&nbsp; test&nbsp; into&nbsp; Crypress&nbsp; into&nbsp; test&nbsp; scenario",
+      "created_date": "2021-05-02T18:45:42.878Z",
       "id": 2
-    },
-    {
-      "title": "2rwra",
-      "body": "gagg",
-      "created_date": "2021-05-02T06:43:09.064Z",
-      "id": 5
-    },
-    {
-      "title": "gasdfafasf",
-      "body": "body",
-      "created_date": "2021-05-02T09:27:33.606Z",
-      "id": 8
-    },
-    {
-      "title": "fgsaf",
-      "body": "gafaf",
-      "created_date": "2021-05-02T09:52:56.155Z",
-      "id": 15
-    },
-    {
-      "title": "r",
-      "body": "fdff",
-      "created_date": "2021-05-02T09:55:03.394Z",
-      "id": 16
-    },
-    {
-      "title": "g",
-      "body": "d",
-      "created_date": "2021-05-02T09:55:04.598Z",
-      "id": 17
-    },
-    {
-      "title": "gagag",
-      "body": "gasdgsg",
-      "created_date": "2021-05-02T09:57:28.521Z",
-      "id": 18
-    },
-    {
-      "title": "DFf",
-      "body": "d",
-      "created_date": "2021-05-02T12:48:19.908Z",
-      "id": 19
-    },
-    {
-      "title": "gagaga",
-      "body": "",
-      "created_date": "2021-05-02T17:18:11.933Z",
-      "id": 20
     }
   ]
 }

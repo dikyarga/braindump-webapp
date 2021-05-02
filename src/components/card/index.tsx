@@ -7,8 +7,8 @@ import { Idea } from "src/types";
 
 export const Card: React.FC<{
   idea: Idea;
-  remove: (number) => void;
-  edit: (Idea) => void;
+  remove: (_: number) => void;
+  edit: (_: Idea) => void;
 }> = ({ remove, idea, edit }) => {
   const title = useRef(idea.title);
   const body = useRef(idea.body);
@@ -21,7 +21,7 @@ export const Card: React.FC<{
     edit(Object.assign({}, idea, { title: newTitle }));
   };
   const handleBodyChange = (evt) => {
-    const newBody = evt.target.value;
+    const newBody = evt.target.value.replace("<br>", "&nbsp;");
     body.current = newBody;
     edit(Object.assign({}, idea, { body: newBody }));
   };
@@ -38,14 +38,14 @@ export const Card: React.FC<{
       <div className="bg-green-200 rounded focus-within:ring-4 focus-within:ring-gray-500 p-4">
         <ContentEditable
           innerRef={titleRef}
-          className="border border-bottom-gray-500 bg-white p-2 text-2xl"
+          className="border border-bottom-gray-500 bg-white p-1 m-1 text-2xl"
           html={title.current}
           onBlur={handleBlur}
           onChange={handleTitleChange}
         />
         <ContentEditable
           innerRef={bodyRef}
-          className="bg-white p-2 text-base"
+          className="bg-white p-1 m-1 text-base"
           html={body.current}
           onBlur={handleBlur}
           onChange={handleBodyChange}
