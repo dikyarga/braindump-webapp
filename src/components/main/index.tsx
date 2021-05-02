@@ -15,18 +15,18 @@ export const Main: React.FC = () => {
     } = useIdea();
 
     return (
-        <div className="text-center font-light py-5 bg-gray-700">
+        <div className="text-center font-light py-5 bg-gray-50">
             <div className="container mx-auto">
                 <h1
                     data-test="main-heading"
-                    className="text-white text-8xl mb-2"
+                    className="text-black text-5xl mb-2"
                 >
                     BrainDump App
                 </h1>
-                <p className="text-lg text-white mb-3">
+                <p className="text-lg text-black mb-3">
                     A place to dump your ideas, even if it's dumb.
                 </p>
-                <Button type="button" onClick={create}>
+                <Button type="button" className="m-4" onClick={create}>
                     Write idea
                 </Button>
                 {!ideas && "loading"}
@@ -44,7 +44,7 @@ export const Main: React.FC = () => {
                 </div>
                 {ideas && (
                     <div className="flex-1 container my-8 max-w-screen-lg mx-auto p-5 ">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 ">
                             {ideas.map((idea) => {
                                 return (
                                     <Card

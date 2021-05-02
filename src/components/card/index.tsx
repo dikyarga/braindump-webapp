@@ -29,24 +29,24 @@ export const Card: React.FC = ({ remove, idea, edit }) => {
         titleRef.current.focus();
     }, []);
     return (
-        <div className="group focus-within:ring-2 focus-within:ring-purple-600">
+        <div className="group bg-blue-200 focus-within:ring-2 focus-within:ring-purple-600 p-4 ">
             <ContentEditable
                 innerRef={titleRef}
-                className="border border-gray-500 bg-white p-10 text-2xl"
+                className="border border-bottom-gray-500 bg-white p-2 text-2xl"
                 html={title.current}
                 onBlur={handleBlur}
                 onChange={handleTitleChange}
             />
             <ContentEditable
                 innerRef={bodyRef}
-                className="border border-gray-500 bg-white p-10 text-base"
+                className="bg-white p-2 text-base"
                 html={body.current}
                 onBlur={handleBlur}
                 onChange={handleBodyChange}
             />
             <Button
                 type="button"
-                className="opacity-0 group-hover:opacity-100"
+                className="opacity-0 group-hover:opacity-100 mt-4"
                 onClick={() => remove(idea.id)}
             >
                 <Image
