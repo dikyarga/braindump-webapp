@@ -30,7 +30,6 @@ export const Main: React.FC = () => {
                                     <Card
                                         key={idea.id}
                                         remove={remove}
-                                        index={index}
                                         idea={idea}
                                         edit={edit}
                                     />

@@ -30,9 +30,7 @@ export default function useUser() {
         await fetch(urlJoin(API_URL, newIdea.id + ""), {
             method: "PUT",
             body: JSON.stringify(newIdea),
-            headers: {
-                "Content-Type": "application/json",
-            },
+            headers,
         });
         mutate();
     };
