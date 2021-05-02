@@ -1,6 +1,6 @@
 # braindump
 
-This a coding challange for BCGDV
+A place to dump your ideas, even if it's dumb.
 
 ## Available Scripts
 
