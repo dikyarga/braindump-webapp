@@ -1,5 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import ContentEditable from "react-contenteditable";
+import Image from "next/image";
+
+import { Button } from "@components";
 
 export const Card: React.FC = ({ remove, idea, edit }) => {
     const title = useRef(idea.title);
@@ -41,12 +44,19 @@ export const Card: React.FC = ({ remove, idea, edit }) => {
                 onBlur={handleBlur}
                 onChange={handleBodyChange}
             />
-            <button
+            <Button
+                type="button"
                 className="opacity-0 group-hover:opacity-100"
                 onClick={() => remove(idea.id)}
             >
-                delete
-            </button>
+                <Image
+                    src="/icons/trash.svg"
+                    alt="Picture of the author"
+                    width={20}
+                    height={20}
+                />
+                Remove
+            </Button>
         </div>
     );
 };
