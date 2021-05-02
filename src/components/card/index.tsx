@@ -4,7 +4,13 @@ import Image from "next/image";
 
 import { Button } from "@components";
 
-export const Card: React.FC = ({ remove, idea, edit }) => {
+type idea = {
+    title: string;
+    body: string;
+    id: number;
+};
+
+export const Card: React.FC<{ idea: idea }> = ({ remove, idea, edit }) => {
     const title = useRef(idea.title);
     const body = useRef(idea.body);
     const titleRef = React.createRef();

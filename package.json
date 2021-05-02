@@ -12,7 +12,8 @@
         "test": "jest -c test/jest.config.js",
         "cypress:open": "cypress open",
         "cypress:run": "cypress run --config video=false",
-        "cypress:test": "start-server-and-test start http://localhost:3000 cypress:run"
+        "cypress:test": "start-server-and-test start http://localhost:3000 cypress:run",
+        "json-server": "node json-server/server.js"
     },
     "dependencies": {
         "@next/bundle-analyzer": "^10.0.5",
