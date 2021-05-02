@@ -13,12 +13,12 @@ describe("Main component testing with testing-library", () => {
         const { getByText } = render(<Main />);
 
         getByText("BrainDump App");
-        getByText("The frontend boilerplate with superpowers!");
+        getByText("A place to dump your ideas, even if it's dumb.");
     });
 
     it("renders button successfuly", () => {
         const { getByText } = render(<Main />);
 
-        getByText("Docs");
+        getByText("Write idea");
     });
 });

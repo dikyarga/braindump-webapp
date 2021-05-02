@@ -29,21 +29,23 @@ export const Card: React.FC = ({ remove, idea, edit }) => {
         titleRef.current.focus();
     }, []);
     return (
-        <div className="group bg-green-200 rounded focus-within:ring-4 focus-within:ring-gray-500 p-4 ">
-            <ContentEditable
-                innerRef={titleRef}
-                className="border border-bottom-gray-500 bg-white p-2 text-2xl"
-                html={title.current}
-                onBlur={handleBlur}
-                onChange={handleTitleChange}
-            />
-            <ContentEditable
-                innerRef={bodyRef}
-                className="bg-white p-2 text-base"
-                html={body.current}
-                onBlur={handleBlur}
-                onChange={handleBodyChange}
-            />
+        <div className="group">
+            <div className="bg-green-200 rounded focus-within:ring-4 focus-within:ring-gray-500 p-4">
+                <ContentEditable
+                    innerRef={titleRef}
+                    className="border border-bottom-gray-500 bg-white p-2 text-2xl"
+                    html={title.current}
+                    onBlur={handleBlur}
+                    onChange={handleTitleChange}
+                />
+                <ContentEditable
+                    innerRef={bodyRef}
+                    className="bg-white p-2 text-base"
+                    html={body.current}
+                    onBlur={handleBlur}
+                    onChange={handleBodyChange}
+                />
+            </div>
             <Button
                 type="button"
                 variant="danger"

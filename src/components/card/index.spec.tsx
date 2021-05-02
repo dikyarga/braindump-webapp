@@ -1,19 +1,25 @@
 import { render } from "@test";
 
-import data from "@public/meta.json";
-import { Cards } from "./index";
+import { Card } from "./index";
+
+const idea = {
+    id: 99,
+    title: "This is a title",
+    body: "this is a description",
+    created_date: new Date(),
+};
 
 describe("Cards component testing with testing-library", () => {
     it("renders without crashing", () => {
-        const component = render(<Cards />);
+        const component = render(<Card idea={idea} />);
 
         expect(component).toBeTruthy();
     });
 
     it("cards length must be equal to the length of the meta data ", () => {
-        const { getAllByTestId } = render(<Cards />);
+        const { getByText } = render(<Card idea={idea} />);
 
-        const cardContainer = getAllByTestId("container");
-        expect(cardContainer).toHaveLength(data.plugins.length);
+        getByText(idea.title);
+        getByText(idea.body);
     });
 });
