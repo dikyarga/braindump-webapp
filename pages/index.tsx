@@ -1,13 +1,11 @@
 import React from "react";
 
-import { Container, Header, Main, Footer } from "@components";
+import { Container, Main } from "@components";
 
 const Home: React.FC = () => {
     return (
         <Container>
-            <Header />
             <Main />
-            <Footer />
         </Container>
     );
 };

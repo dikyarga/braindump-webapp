@@ -29,7 +29,7 @@ export const Card: React.FC = ({ remove, idea, edit }) => {
         titleRef.current.focus();
     }, []);
     return (
-        <div className="group bg-blue-200 focus-within:ring-2 focus-within:ring-purple-600 p-4 ">
+        <div className="group bg-red-200 rounded focus-within:ring-2 focus-within:ring-purple-600 p-4 ">
             <ContentEditable
                 innerRef={titleRef}
                 className="border border-bottom-gray-500 bg-white p-2 text-2xl"
