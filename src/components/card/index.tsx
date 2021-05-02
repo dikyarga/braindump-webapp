@@ -19,7 +19,7 @@ export const Card: React.FC = ({ remove, idea, edit }) => {
     };
 
     const handleBlur = () => {
-        console.log(title.current);
+        // edit(Object.assign({}, idea));
     };
     useEffect(() => {
         // code to run on component mount
