@@ -29,7 +29,7 @@ export const Card: React.FC = ({ remove, idea, edit }) => {
         titleRef.current.focus();
     }, []);
     return (
-        <div className="group bg-red-200 rounded focus-within:ring-2 focus-within:ring-purple-600 p-4 ">
+        <div className="group bg-green-200 rounded focus-within:ring-4 focus-within:ring-gray-500 p-4 ">
             <ContentEditable
                 innerRef={titleRef}
                 className="border border-bottom-gray-500 bg-white p-2 text-2xl"
@@ -46,16 +46,17 @@ export const Card: React.FC = ({ remove, idea, edit }) => {
             />
             <Button
                 type="button"
+                variant="danger"
                 className="opacity-0 group-hover:opacity-100 mt-4"
                 onClick={() => remove(idea.id)}
             >
                 <Image
-                    src="/icons/trash.svg"
+                    src="/icons/trash-2.svg"
                     alt="Picture of the author"
-                    width={20}
-                    height={20}
+                    width={16}
+                    height={16}
                 />
-                Remove
+                <span className="ml-2">Remove</span>
             </Button>
         </div>
     );
