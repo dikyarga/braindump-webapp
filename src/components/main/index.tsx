@@ -1,53 +1,11 @@
 import React from "react";
-import urlJoin from "url-join";
-import useSWR from "swr";
 
 import { Button, Card } from "@components";
-
-const API_URL = "http://localhost:4000/ideas";
+import useIdea from "../../hooks/use-idea";
 
 export const Main: React.FC = () => {
-    const { data: ideas, mutate } = useSWR(API_URL);
-    const setIdeas = mutate;
-    const addCard = async () => {
-        const freshIdea = { title: "", body: "body" };
-        setIdeas([...ideas, freshIdea], false);
+    const { ideas, create, edit, remove } = useIdea();
 
-        await fetch(API_URL, {
-            method: "POST",
-            body: JSON.stringify(freshIdea),
-            headers: {
-                "Content-Type": "application/json",
-            },
-        });
-        mutate();
-    };
-    const removeIdea = async (id) => {
-        console.log({ id });
-        const newIdeas = ideas.filter((idea) => idea.id !== id);
-        console.log({ newIdeas });
-        setIdeas([...newIdeas], false);
-        await fetch(urlJoin(API_URL, id + ""), {
-            method: "DELETE",
-        });
-        mutate();
-    };
-    const editIdea = async (newIdea) => {
-        const newIdeas = ideas.map((idea) =>
-            idea.id === newIdea.id ? newIdea : idea,
-        );
-        // newIdeas[index] = newIdea;
-
-        setIdeas(newIdeas, false);
-        await fetch(urlJoin(API_URL, newIdea.id + ""), {
-            method: "PUT",
-            body: JSON.stringify(newIdea),
-            headers: {
-                "Content-Type": "application/json",
-            },
-        });
-        mutate();
-    };
     return (
         <div className="text-center font-light py-5 bg-gray-700">
             <div className="container mx-auto">
@@ -60,7 +18,7 @@ export const Main: React.FC = () => {
                 <p className="text-lg text-white mb-3">
                     A place to dump your ideas, even if it's dumb.
                 </p>
-                <Button type="button" onClick={addCard}>
+                <Button type="button" onClick={create}>
                     Write idea
                 </Button>
                 {!ideas && "loading"}
@@ -71,10 +29,10 @@ export const Main: React.FC = () => {
                                 return (
                                     <Card
                                         key={idea.id}
-                                        remove={removeIdea}
+                                        remove={remove}
                                         index={index}
                                         idea={idea}
-                                        edit={editIdea}
+                                        edit={edit}
                                     />
                                 );
                             })}
