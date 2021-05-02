@@ -1,14 +1,15 @@
 import React, { useEffect, useRef } from "react";
 import ContentEditable from "react-contenteditable";
 
-export const Card: React.FC = ({ remove, index, idea, edit }) => {
-    const text = useRef(idea);
+export const Card: React.FC = ({ remove, idea, edit }) => {
+    const text = useRef(idea.title);
     const me = React.createRef();
 
     const handleChange = (evt) => {
-        const newIdea = evt.target.value;
-        text.current = newIdea;
-        edit(index, newIdea);
+        const title = evt.target.value;
+        console.log({ title });
+        text.current = title;
+        edit(Object.assign({}, idea, { title: title }));
     };
 
     const handleBlur = () => {
@@ -30,7 +31,7 @@ export const Card: React.FC = ({ remove, index, idea, edit }) => {
             />
             <button
                 className="opacity-0 group-hover:opacity-100"
-                onClick={() => remove(index)}
+                onClick={() => remove(idea.id)}
             >
                 delete
             </button>

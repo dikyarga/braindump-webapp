@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 import { Button, Card } from "@components";
 
 export const Main: React.FC = () => {
     const [ideas, setIdeas] = useState([]);
     const addCard = () => {
-        setIdeas([...ideas, { id: 0, title: "title", body: "body" }]);
+        setIdeas([...ideas, { id: uuidv4(), title: "title", body: "body" }]);
     };
     const removeIdea = (id) => {
         console.log({ id });
@@ -13,8 +14,10 @@ export const Main: React.FC = () => {
         console.log({ newIdeas });
         setIdeas([...newIdeas]);
     };
-    const editIdea = (id, newIdea) => {
-        const newIdeas = [...ideas];
+    const editIdea = (newIdea) => {
+        const newIdeas = ideas.map((idea) =>
+            idea.id === newIdea.id ? newIdea : idea,
+        );
         // newIdeas[index] = newIdea;
 
         setIdeas(newIdeas);
